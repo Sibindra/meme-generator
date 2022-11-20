@@ -1,16 +1,18 @@
+import Article from "./components/Article";
 import Header from "./components/Header";
+import Section from "./components/Section";
 
-import { Button, Card } from "react-bootstrap";
-import 'bootstrap/dist/css/bootstrap.min.css';
-
+import "./style.css";
 
 function App() {
   return (
-    <Card className="rounded-0 p-vh-3">
+    <div id="hero">
       <Header/>
-    </Card>
-  //  <div id="hero">
-  //  </div>
+      {/* input container */}
+      <Article/>
+      {/* image container */}
+    <Section/>
+    </div>
   );
 }
 
