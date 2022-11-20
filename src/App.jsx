@@ -1,6 +1,5 @@
 import Article from "./components/Article";
 import Header from "./components/Header";
-import Section from "./components/Section";
 
 import "./style.css";
 
@@ -15,7 +14,6 @@ function App() {
             {/* input container */}
             <Article />
             {/* image container */}
-            <Section />
         </div>
     );
 }
