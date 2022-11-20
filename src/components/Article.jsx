@@ -1,5 +1,6 @@
 import React from "react";
 
+
 export default function Article() {
     return (
         <div id="article">
@@ -18,7 +19,9 @@ export default function Article() {
                 />
             </div>
 
-            <button id="btn">Generate a new Image</button>
+            <button id="btn">
+                Generate a new Image
+            </button>
         </div>
     );
 }

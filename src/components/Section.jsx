@@ -1,9 +1,19 @@
 import React from "react";
 
-export default function Section(){
-    return(
-        <div id="section">
-            works
-        </div>
-    )
+import memesData from "../memesData";
+
+
+export default function Section() {
+    function getmemeImage() {
+        let url;
+        const memeArray = memesData.data.memes;
+        const randomNo = Math.floor(Math.random() * memeArray.length);
+        url = memeArray[randomNo].url;
+        console.log(url);
+    }
+
+    document.getElementById('btn').onclick=getmemeImage;
+
+
+    return <div id="section">works</div>;
 }
