@@ -7,6 +7,7 @@ import Section from "./Section";
 export default function Article() {
 
     const [allMemeImages,setAllMemeImages]=useState(memesData);
+    
 
     // useState holding current memes data
     const [meme,setMeme]=useState({
