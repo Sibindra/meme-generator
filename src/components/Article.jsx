@@ -6,13 +6,26 @@ import Section from "./Section";
 
 export default function Article() {
 
-    const [url,setUrl]=useState()
-    
-    function getmemeImage() {
-        const memeArray = memesData.data.memes;
-        const randomNo = Math.floor(Math.random() * memeArray.length);
+    const [allMemeImages,setAllMemeImages]=useState(memesData);
 
-        setUrl(url=>memeArray[randomNo].url);
+    // useState holding current memes data
+    const [meme,setMeme]=useState({
+        topText:"",
+        bottomText:"",
+        randomImage:"https://i.imgflip.com/3si4.jpg"
+    });
+
+
+    // useState holding all the memes data 
+
+    function getMemeImage(){
+        const memesArray=allMemeImages.data.memes;
+        const randomNo=Math.floor(Math.random()*memesArray.length);
+        const url=memesArray[randomNo].url;
+
+        setMeme(prevMeme=>({
+            ...prevMeme,randomImage:url
+        }))
     }
 
     return (
@@ -33,11 +46,11 @@ export default function Article() {
                     />
                 </div>
 
-                <button id="btn" onClick={getmemeImage}>
+                <button id="btn" onClick={getMemeImage}>
                     Generate a new Image
                 </button>
             </div>
-            <Section url={url} />
+            <Section url={meme.randomImage} />
         </>
     );
 }
