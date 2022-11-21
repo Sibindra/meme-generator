@@ -6,16 +6,13 @@ import Section from "./Section";
 
 export default function Article() {
 
-    let [url,setUrl]=useState("works")
-    // let url;
-
+    const [url,setUrl]=useState()
     
     function getmemeImage() {
         const memeArray = memesData.data.memes;
         const randomNo = Math.floor(Math.random() * memeArray.length);
-        url = memeArray[randomNo].url;
-        // console.log(url);
-        setUrl(url);
+
+        setUrl(url=>memeArray[randomNo].url);
     }
 
     return (
