@@ -6,6 +6,7 @@ import Section from "./Section";
 
 export default function Article() {
 
+    // eslint-disable-next-line
     const [allMemeImages,setAllMemeImages]=useState(memesData);
 
 
@@ -58,6 +59,7 @@ export default function Article() {
                         className="text"
                         name="first"
                         onChange={handleChange}
+                        value={memeText.first}
                     />
                     <input
                         type="text"
@@ -66,6 +68,7 @@ export default function Article() {
                         className="text"
                         name="second"
                         onChange={handleChange}
+                        value={memeText.second}
                     />
                 </div>
 
