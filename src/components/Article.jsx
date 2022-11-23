@@ -14,6 +14,17 @@ export default function Article() {
         first:"shut up ",
         second:"and take my money"
     })
+
+    console.log(memeText)
+
+    function handleChange(event){
+        setMemeText(prevText=>{
+            return {
+                ...memeText,
+                [event.target.name]:event.target.value
+            }
+        })
+    }
     
 
     // useState holding current memes data
