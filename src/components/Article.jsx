@@ -7,6 +7,13 @@ import Section from "./Section";
 export default function Article() {
 
     const [allMemeImages,setAllMemeImages]=useState(memesData);
+
+
+    // useState to hold form data
+    const [memeText,setMemeText]=useState({
+        first:"shut up ",
+        second:"and take my money"
+    })
     
 
     // useState holding current memes data
@@ -38,12 +45,16 @@ export default function Article() {
                         placeholder="Shut Up"
                         id="i1"
                         className="text"
+                        name="first"
+                        onChange={handleChange}
                     />
                     <input
                         type="text"
                         placeholder="and take my money"
                         id="i2"
                         className="text"
+                        name="second"
+                        onChange={handleChange}
                     />
                 </div>
 
