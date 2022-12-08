@@ -11,9 +11,7 @@ function App() {
     return (
         <div id="hero">
             <Header />
-            {/* input container */}
             <Article />
-            {/* image container */}
         </div>
     );
 }
