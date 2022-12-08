@@ -7,7 +7,7 @@
 ## useStates
 the article section holds a useState hook to hold and change as follows
 ```
-    const [allMemeImages,setAllMemeImages]=useState(memesData);
+    const [allMemes,setAllMemes]=useState(memesData);
     //memesData is imported from a json file
 
 ```
@@ -46,4 +46,17 @@ the meme image url and meme texts are passed into section component through prop
 ```
     <Section url={meme.randomImage} topText={memeText.first} bottomText={memeText.second}/>
 
+```
+
+## fetching data
+fetcing meme images is done through a meme API [getMemes](https://https://api.imgflip.com/get_memes) and implemented by the help of ```useEffect``` hook
+```
+    React.useEffect(() => {
+        async function getMemes() {
+            const res = await fetch("https://api.imgflip.com/get_memes")
+            const data = await res.json()
+            setAllMemes(data.data.memes)
+        }
+        getMemes()
+    }, [])
 ```
