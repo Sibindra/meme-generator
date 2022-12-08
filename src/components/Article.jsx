@@ -16,7 +16,7 @@ export default function Article() {
         second:"and take my money"
     })
 
-    console.log(memeText)
+    // console.log(memeText)
 
     function handleChange(event){
         setMemeText(prevText=>{
@@ -76,7 +76,7 @@ export default function Article() {
                     Generate a new Image
                 </button>
             </div>
-            <Section url={meme.randomImage} />
+            <Section url={meme.randomImage} topText={memeText.first} bottomText={memeText.second}/>
         </>
     );
 }
